@@ -25,3 +25,4 @@ Use lombok annotations to declutter the code.
 If many robots will be operated, consider adding parallel processing of data for faster performance. (Check also with business: Does order of robot's outputs need to be preserved?)
 Re-consider design of Robot accepting World as a parameter. Consider replacing World class with some primitive data types
 (More is probably mentioned in my comments in various classes.)
+replace print statement with logger
