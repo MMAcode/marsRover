@@ -5,11 +5,11 @@ import marsExploration.World;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static marsExploration.Compass.Orientation.N;
 import static marsExploration.Robot.*;
 import static marsExploration.Robot.Instruction.F;
 import static marsExploration.Robot.Instruction.L;
 import static marsExploration.Robot.Instruction.R;
-import static marsExploration.Robot.Orientation.N;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RobotTest {
@@ -34,28 +34,17 @@ class RobotTest {
     }
 
     @Test
-    void shouldRotateRight() {
+    void shouldRotate() {
         robotAt00N.move(Instruction.R);
         assertEquals("(0, 0, E)", robotAt00N.getStatus());
         robotAt00N.move(Instruction.R);
         assertEquals("(0, 0, S)", robotAt00N.getStatus());
-        robotAt00N.move(Instruction.R);
-        assertEquals("(0, 0, W)", robotAt00N.getStatus());
-        robotAt00N.move(Instruction.R);
+        robotAt00N.move(Instruction.L);
+        assertEquals("(0, 0, E)", robotAt00N.getStatus());
+        robotAt00N.move(Instruction.L);
         assertEquals("(0, 0, N)", robotAt00N.getStatus());
     }
 
-    @Test
-    void shouldRotateLeft() {
-        robotAt00N.move(L);
-        assertEquals("(0, 0, W)", robotAt00N.getStatus());
-        robotAt00N.move(L);
-        assertEquals("(0, 0, S)", robotAt00N.getStatus());
-        robotAt00N.move(L);
-        assertEquals("(0, 0, E)", robotAt00N.getStatus());
-        robotAt00N.move(L);
-        assertEquals("(0, 0, N)", robotAt00N.getStatus());
-    }
 
     @Test
     void straight_shouldLandOnX0Y3FacingNorth() {

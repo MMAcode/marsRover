@@ -1,5 +1,7 @@
 package marsExploration;
 
+import static marsExploration.Compass.Orientation;
+
 public class Robot {
     private final World world; //not sure if robot should 'have' a world, but it is practical here for now;
     // also instead of new class we could just have array here.
@@ -63,45 +65,12 @@ public class Robot {
         }
     }
 
-    //rotating methods should be re-thinked as there is a lot of repetition;
-    //(eg storing orientations as array of size 4 could be alternative solution)
     private void rotateRight() {
-        switch (orientation) {
-            case E:
-                orientation = Orientation.S;
-                break;
-            case S:
-                orientation = Orientation.W;
-                break;
-            case W:
-                orientation = Orientation.N;
-                break;
-            case N:
-                orientation = Orientation.E;
-                break;
-        }
+        orientation = Compass.rightOf(orientation);
     }
 
     private void rotateLeft() {
-        switch (orientation) {
-            case E:
-                orientation = Orientation.N;
-                break;
-            case S:
-                orientation = Orientation.E;
-                break;
-            case W:
-                orientation = Orientation.S;
-                break;
-            case N:
-                orientation = Orientation.W;
-                break;
-        }
-    }
-
-    // enums
-    public enum Orientation {
-        N, E, S, W
+        orientation = Compass.leftOf(orientation);
     }
 
     public enum Instruction {

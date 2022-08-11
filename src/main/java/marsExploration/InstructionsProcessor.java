@@ -1,5 +1,7 @@
 package marsExploration;
 
+import marsExploration.Compass.Orientation;
+
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -64,7 +66,7 @@ All this would require validation of course in 'reality'.
                     Robot robot = new Robot(world,
                         Long.parseLong(positions[0]),
                         Long.parseLong(positions[1]),
-                        Robot.Orientation.valueOf(positions[2]));
+                        Orientation.valueOf(positions[2]));
                     robot.move(instructions);
                     return robot.getStatus();
                 }
