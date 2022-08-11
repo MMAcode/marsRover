@@ -1,4 +1,4 @@
-package tests;
+package marsExploration;
 
 import marsExploration.Robot;
 import marsExploration.World;
