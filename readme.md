@@ -12,7 +12,8 @@ To solve this task I followed my typical approach in a sense that I created a ro
 I also partially followed TDD when building Robot class to make sure Robot behaves as expected.
 
 ## Testing
-I partially followed TDD when building the Robot class to illustrate how I would test a class and to check that my Robot works as expected. Methods in that class could be improved/could be more systematic. Eg we could test if robot can move 1 filed in every single direction, if robot can rotate from each direction 90degrees to each side, if robot can get of the map in various directions, multisteps in one direction, multi-rotations, and combinations of everything.
+I partially followed TDD when building the Robot class to illustrate how I would test a class and to check that my Robot works as expected. 
+Methods in that class could be improved/could be more systematic. Eg we could test if robot can move 1 filed in every single direction, if robot can get of the map in various directions, multisteps in one direction, multi-rotations, more complex combinations.
 ToDo: implement tests for all classes; run jacoco utility to see code coverage, if any lines/code was missed during testing.
 
 ## Notes

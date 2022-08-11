@@ -12,7 +12,6 @@ import static marsExploration.Robot.Instruction.R;
 import static marsExploration.Robot.Orientation.N;
 import static org.junit.jupiter.api.Assertions.*;
 
-//todo: replace multiple assertions in single test with assertAll(a1,a2,a3...)
 class RobotTest {
     World world = new World(5, 10);
     Robot robotAt00N;
