@@ -5,10 +5,10 @@ public class Robot {
     // also instead of new class we could just have array here.
     //Word is probably more flexible as it is possible to enrich with other properties and methods in future.
 
-    long coordinateX;
-    long coordinateY;
-    Orientation orientation; //orientation could be implemented as double linked list of 4 elements to simulate rotating;
-    boolean lost = false;
+    private long coordinateX;
+    private long coordinateY;
+    private Orientation orientation; //orientation could be implemented as double linked list of 4 elements to simulate rotating;
+    private boolean lost = false;
 
     public Robot(World world, long x, long y, Orientation orientation) {
         this.world = world;
@@ -20,7 +20,7 @@ public class Robot {
     public void move(Instruction... instructions) {
         //This could be changed to accept String and then validate characters of that string.
         for(Instruction instruction : instructions) {
-            if (lost) return;
+            if (lost) break;
             switch (instruction) {
                 case R:
                     rotateRight();
@@ -39,7 +39,7 @@ public class Robot {
 
     public String getStatus() {
         //(to clarify/todo: does the output need to match the color scheme of the example?)
-        return "(" + coordinateX + ", " + coordinateY +  ", " + orientation + ")" + (isLost() ? " LOST" : "");
+        return "(" + coordinateX + ", " + coordinateY +  ", " + orientation + ")" + (lost ? " LOST" : "");
     }
 
     private void moveForward() {
@@ -60,12 +60,6 @@ public class Robot {
                 if (coordinateY < world.getY_size()) coordinateY++;
                 else lost = true;
                 break;
-        }
-        if (coordinateX < 0
-            || coordinateY < 0
-            || coordinateX > world.getX_size()
-            || coordinateY > world.getY_size()) {
-            lost = true;
         }
     }
 
@@ -103,24 +97,6 @@ public class Robot {
                 orientation = Orientation.W;
                 break;
         }
-    }
-
-
-    //getters:
-    public long getCoordinateX() {
-        return coordinateX;
-    }
-
-    public long getCoordinateY() {
-        return coordinateY;
-    }
-
-    public Orientation getOrientation() {
-        return orientation;
-    }
-
-    public boolean isLost() {
-        return lost;
     }
 
     // enums
