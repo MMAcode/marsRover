@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class InstructionsProcessor {
+    private static String INVALID_INPUT = "Invalid input.";
 
 /*    in what form/dataType the data will be received is at the moment unknown.
 For simplicity, I will now assume it will be in the form of text.
@@ -30,10 +31,17 @@ All this would require validation of course in 'reality'.
 
     public static String processRequest(String request) {
         String[] rows = request.split("\n");
-        if (rows[0] == null) return null;
-        World world = buildWorld(rows[0]);
+        if (rows[0] == null) return INVALID_INPUT;
+        //todo some error handling here
+        if (!worldInputIsValid(rows[0])) return INVALID_INPUT;
 
+        World world = buildWorld(rows[0]);
         return buildResponseUsingRobotsInTheWorld(world, Arrays.stream(rows).skip(1));
+    }
+
+    //example of simple validation
+    private static boolean worldInputIsValid(String firstRow) {
+        return firstRow.matches("[0-9]+ [0-9]+");
     }
 
     private static World buildWorld(String firstRowOfInput) {
