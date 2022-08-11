@@ -8,7 +8,6 @@ import java.util.List;
         N, E, S, W;
 
         private static List<Orientation> directions = new ArrayList<>(Arrays.asList(Orientation.N, Orientation.E, Orientation.S, Orientation.W));
-        public Orientation turn() {return N;}
 
         public static Orientation rightOf(Orientation orientation) {
             return directions.get(getValidIndex(directions.indexOf(orientation) + 1));
