@@ -5,8 +5,7 @@ import marsExploration.World;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static marsExploration.Compass.Orientation.N;
-import static marsExploration.Robot.*;
+import static marsExploration.Orientation.N;
 import static marsExploration.Robot.Instruction.F;
 import static marsExploration.Robot.Instruction.L;
 import static marsExploration.Robot.Instruction.R;
@@ -35,13 +34,13 @@ class RobotTest {
 
     @Test
     void shouldRotate() {
-        robotAt00N.move(Instruction.R);
+        robotAt00N.move(R);
         assertEquals("(0, 0, E)", robotAt00N.getStatus());
-        robotAt00N.move(Instruction.R);
+        robotAt00N.move(R, R);
+        assertEquals("(0, 0, W)", robotAt00N.getStatus());
+        robotAt00N.move(L);
         assertEquals("(0, 0, S)", robotAt00N.getStatus());
-        robotAt00N.move(Instruction.L);
-        assertEquals("(0, 0, E)", robotAt00N.getStatus());
-        robotAt00N.move(Instruction.L);
+        robotAt00N.move(L, L);
         assertEquals("(0, 0, N)", robotAt00N.getStatus());
     }
 

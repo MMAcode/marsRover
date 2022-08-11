@@ -1,6 +1,5 @@
 package marsExploration;
 
-import marsExploration.Compass.Orientation;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

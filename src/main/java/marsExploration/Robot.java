@@ -1,6 +1,8 @@
 package marsExploration;
 
-import static marsExploration.Compass.Orientation;
+
+import static marsExploration.Orientation.leftOf;
+import static marsExploration.Orientation.rightOf;
 
 public class Robot {
     private final World world; //not sure if robot should 'have' a world, but it is practical here for now;
@@ -66,11 +68,11 @@ public class Robot {
     }
 
     private void rotateRight() {
-        orientation = Compass.rightOf(orientation);
+        orientation = rightOf(orientation);
     }
 
     private void rotateLeft() {
-        orientation = Compass.leftOf(orientation);
+        orientation = leftOf(orientation);
     }
 
     public enum Instruction {
