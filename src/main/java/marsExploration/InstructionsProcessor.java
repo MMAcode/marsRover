@@ -19,14 +19,17 @@ All this would require validation of course in 'reality'.
             "(2, 3, E) LFRFF\n" +
             "(0, 2, N) FFLFRFF";
         String response1 = processRequest(instructions1);
-        System.out.println("result 1: \n" + response1);
-        System.out.println();
+        System.out.println("result 1: \n" + response1 + "\n");
 
         String instructions2 = "4 8\n" +
             "(2, 3, N) FLLFR\n" +
             "(1, 0, S) FFRLF";
         String response2 = processRequest(instructions2);
-        System.out.println("result 2: \n" + response2);
+        System.out.println("result 2: \n" + response2 + "\n");
+
+        String instructions3 = "4 3 8";
+        String response3 = processRequest(instructions3);
+        System.out.println("result 3: \n" + response3);
     }
 
     public static String processRequest(String request) {
